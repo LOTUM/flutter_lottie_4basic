@@ -10,10 +10,10 @@ class LottieController {
 
   LottieController(int id) {
     this.id = id;
-    print('Creating Method Channel convictiontech/flutter_lottie_$id');
-    this._channel = new MethodChannel('convictiontech/flutter_lottie_$id');
+    print('Creating Method Channel shotouch/flutter_lottie_$id');
+    this._channel = new MethodChannel('shotouch/flutter_lottie_$id');
     this._playFinished =
-        EventChannel('convictiontech/flutter_lottie_stream_playfinish_$id');
+        EventChannel('shotouch/flutter_lottie_stream_playfinish_$id');
   }
 
   Future<void> setLoopAnimation(bool loop) async {

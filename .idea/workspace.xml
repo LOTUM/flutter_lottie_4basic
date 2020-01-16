@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="63cf3c1a-f870-4491-9a47-b00a48df182c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/mark922_flutter_lottie/LottieViewFactory.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/mark922_flutter_lottie/LottieViewFactory.java" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/example/roy_flutter_lottie/LottieViewFactory.java" afterPath="$PROJECT_DIR$/android/src/main/java/com/example/roy_flutter_lottie/LottieViewFactory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -22,7 +22,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="LottieViewFactory.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/mark922_flutter_lottie/LottieViewFactory.java">
+        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/roy_flutter_lottie/LottieViewFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
               <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
@@ -34,7 +34,7 @@
         </entry>
       </file>
       <file leaf-file-name="FlutterLottiePlugin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/mark922_flutter_lottie/FlutterLottiePlugin.java">
+        <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/roy_flutter_lottie/FlutterLottiePlugin.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="53" lean-forward="true" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
@@ -65,7 +65,7 @@
         <option value="$PROJECT_DIR$/example/android/app/src/main/java/com/example/flutter_lottie_example/MainActivity.kt" />
         <option value="$PROJECT_DIR$/example/android/app/src/main/java/com/example/flutter_lottie_example/MainActivity.java" />
         <option value="$PROJECT_DIR$/example/android/app/src/main/kotlin/com/example/flutter_lottie/MainActivity.kt" />
-        <option value="$PROJECT_DIR$/android/src/main/java/com/example/mark922_flutter_lottie/LottieViewFactory.java" />
+        <option value="$PROJECT_DIR$/android/src/main/java/com/example/roy_flutter_lottie/LottieViewFactory.java" />
       </list>
     </option>
   </component>
@@ -149,7 +149,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="mark922_flutter_lottie" type="462c0819:PsiDirectoryNode" />
+              <item name="roy_flutter_lottie" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flutter_lottie" type="b2602c69:ProjectViewProjectNode" />
@@ -491,7 +491,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/mark922_flutter_lottie/LottieView.java">
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/roy_flutter_lottie/LottieView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
@@ -499,7 +499,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/mark922_flutter_lottie/FlutterLottiePlugin.java">
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/roy_flutter_lottie/FlutterLottiePlugin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="53" lean-forward="true" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
@@ -507,7 +507,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/mark922_flutter_lottie/LottieViewFactory.java">
+    <entry file="file://$PROJECT_DIR$/android/src/main/java/com/example/roy_flutter_lottie/LottieViewFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />

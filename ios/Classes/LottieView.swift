@@ -25,11 +25,11 @@ public class LottieView : NSObject, FlutterPlatformView {
    
    func create(args: Any?) {
       
-      let channel : FlutterMethodChannel = FlutterMethodChannel.init(name: "convictiontech/flutter_lottie_" + String(viewId), binaryMessenger: self.registrarInstance.messenger())
+      let channel : FlutterMethodChannel = FlutterMethodChannel.init(name: "shotouch/flutter_lottie_" + String(viewId), binaryMessenger: self.registrarInstance.messenger())
       let handler : FlutterMethodCallHandler = methodCall;
       channel.setMethodCallHandler(handler)
       
-      let testChannel = FlutterEventChannel(name: "convictiontech/flutter_lottie_stream_playfinish_"  + String(viewId), binaryMessenger: self.registrarInstance.messenger())
+      let testChannel = FlutterEventChannel(name: "shotouch/flutter_lottie_stream_playfinish_"  + String(viewId), binaryMessenger: self.registrarInstance.messenger())
       self.testStream  = TestStreamHandler()
       testChannel.setStreamHandler(testStream as? FlutterStreamHandler & NSObjectProtocol)
       
@@ -50,6 +50,8 @@ public class LottieView : NSObject, FlutterPlatformView {
             let path = Bundle.main.path(forResource: key, ofType: nil)
             self.animationView = AnimationView(filePath: path!)
          }
+
+         self.animationView?.contentMode = .scaleAspectFit
          
          let loop = argsDict["loop"] as? Bool ?? false
          let reverse = argsDict["reverse"] as? Bool ?? false
