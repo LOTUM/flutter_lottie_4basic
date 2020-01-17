@@ -1,4 +1,4 @@
-package tw.roy.flutter_lottie_basic;
+package tw.roy.flutter_lottie_4basic;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -11,7 +11,7 @@ public class FlutterLottiePlugin {
   /** Plugin registration. */
   public static void registerWith(Registrar registrar) {
 	registrar.platformViewRegistry().registerViewFactory(
-		"flutter_lottie_basic",
+		"flutter_lottie_4basic",
 		new LottieViewFactory(registrar)
 	);
   }

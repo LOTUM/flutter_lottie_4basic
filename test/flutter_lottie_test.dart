@@ -1,9 +1,9 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_lottie_basic/flutter_lottie_basic.dart';
+import 'package:flutter_lottie_4basic/flutter_lottie_4basic.dart';
 
 void main() {
-  const MethodChannel channel = MethodChannel('flutter_lottie_basic');
+  const MethodChannel channel = MethodChannel('flutter_lottie_4basic');
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {

@@ -1,7 +1,7 @@
-name: flutter_lottie_basic
+name: flutter_lottie_4basic
 description: Use lottie in flutter to render animations for iOS and Android, support some basic features
 version: 0.1.0
-homepage: https://github.com/royguanyu/flutter_lottie_basic
+homepage: https://github.com/royguanyu/flutter_lottie_4basic
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -19,7 +19,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: tw.roy.flutter_lottie_basic
+        package: tw.roy.flutter_lottie_4basic
         pluginClass: FlutterLottiePlugin
       ios:
         pluginClass: FlutterLottiePlugin

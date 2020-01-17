@@ -1,4 +1,4 @@
-group 'tw.roy.flutter_lottie_basic'
+group 'tw.roy.flutter_lottie_4basic'
 version '1.0-SNAPSHOT'
 
 buildscript {

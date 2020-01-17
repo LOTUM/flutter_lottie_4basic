@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_lottie_basic/flutter_lottie_basic.dart';
+import 'package:flutter_lottie_4basic/flutter_lottie_4basic.dart';
 
 void main() => runApp(MyApp());
 

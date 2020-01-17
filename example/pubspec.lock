@@ -69,7 +69,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_lottie_basic:
+  flutter_lottie_4basic:
     dependency: "direct dev"
     description:
       path: ".."

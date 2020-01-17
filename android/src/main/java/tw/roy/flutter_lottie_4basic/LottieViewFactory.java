@@ -1,4 +1,4 @@
-package tw.roy.flutter_lottie_basic;
+package tw.roy.flutter_lottie_4basic;
 
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.platform.PlatformView;
