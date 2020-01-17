@@ -1,4 +1,4 @@
-# flutter_lottie
+# flutter_lottie_4basic
 
 Use Lottie in Flutter.
 
