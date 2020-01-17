@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mark922_flutter_lottie.iml" filepath="$PROJECT_DIR$/mark922_flutter_lottie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flutter_lottie_4basic.iml" filepath="$PROJECT_DIR$/flutter_lottie_4basic.iml" />
     </modules>
   </component>
 </project>

@@ -4,6 +4,8 @@ import android.animation.Animator;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
+import android.widget.ImageView;
+
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieProperty;
@@ -35,6 +37,9 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
         mRegistrar = registrar;
         animationView = new LottieAnimationView(context);
         animationView.enableMergePathsForKitKatAndAbove(true);
+
+        animationView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+
 
         Map<String, Object> params = (Map<String, Object>) args;
         create(params);

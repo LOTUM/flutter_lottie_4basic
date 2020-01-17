@@ -50,6 +50,8 @@ public class LottieView : NSObject, FlutterPlatformView {
             let path = Bundle.main.path(forResource: key, ofType: nil)
             self.animationView = AnimationView(filePath: path!)
          }
+
+         self.animationView?.contentMode = .scaleAspectFit
          
          let loop = argsDict["loop"] as? Bool ?? false
          let reverse = argsDict["reverse"] as? Bool ?? false
