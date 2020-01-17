@@ -17,7 +17,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  mark922_flutter_lottie:
+  flutter_lottie_basic:
     path: ../
 
 # For information on the generic Dart part of this file, see the

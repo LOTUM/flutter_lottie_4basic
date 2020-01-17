@@ -1,4 +1,4 @@
-package com.example.mark922_flutter_lottie;
+package tw.roy.flutter_lottie_basic;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -11,7 +11,7 @@ public class FlutterLottiePlugin {
   /** Plugin registration. */
   public static void registerWith(Registrar registrar) {
 	registrar.platformViewRegistry().registerViewFactory(
-		"convictiontech/flutter_lottie",
+		"flutter_lottie_basic",
 		new LottieViewFactory(registrar)
 	);
   }

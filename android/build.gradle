@@ -1,4 +1,4 @@
-group 'com.example.flutter_lottie'
+group 'tw.roy.flutter_lottie_basic'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        classpath 'com.android.tools.build:gradle:3.5.3'
     }
 }
 
@@ -35,5 +35,35 @@ android {
 }
 
 dependencies {
-	implementation 'com.airbnb.android:lottie:3.0.7'
+	implementation 'com.airbnb.android:lottie:3.3.1'
 }
+
+subprojects {
+        project.configurations.all {
+            resolutionStrategy.eachDependency { details ->
+                if (details.requested.group == 'androidx.core'
+                        && !details.requested.name.contains('core') ) {
+                    details.useVersion "1.0.0"
+                }
+                if (details.requested.group.startsWith('androidx')) {
+                    details.useVersion "1.0.0"
+                }
+                 if (details.requested.group == 'android.lifecycle'
+                        && !details.requested.name.contains('lifecycle') ) {
+                    details.useVersion "2.0.0"
+                }
+                  if (details.requested.group == 'androidx.customview'
+                        && !details.requested.name.contains('customview') ) {
+                    details.useVersion "1.0.0"
+                }
+                //  if (details.requested.group == 'androidx.interpolator'
+                //         && !details.requested.name.contains('interpolator') ) {
+                //     details.useVersion "1.0.0"
+                // }
+                 if (details.requested.group == 'androidx.arch.core'
+                        && !details.requested.name.contains('core') ) {
+                    details.useVersion "2.0.0"
+                }
+            }
+        }
+    }

@@ -1,4 +1,4 @@
-package com.example.mark922_flutter_lottie;
+package tw.roy.flutter_lottie_basic;
 
 import android.animation.Animator;
 import android.content.Context;
@@ -43,10 +43,10 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
 
     void create(Map<String, Object> args) {
 
-        channel = new MethodChannel(mRegistrar.messenger(), "convictiontech/flutter_lottie_" + mId);
+        channel = new MethodChannel(mRegistrar.messenger(), "flutter_lottie_basic_" + mId);
         channel.setMethodCallHandler(this);
 
-        final EventChannel onPlaybackCompleteEventChannel = new EventChannel(mRegistrar.messenger(), "convictiontech/flutter_lottie_stream_playfinish_" + mId);
+        final EventChannel onPlaybackCompleteEventChannel = new EventChannel(mRegistrar.messenger(), "flutter_lottie_basic_stream_playfinish_" + mId);
 
         onPlaybackCompleteEventChannel.setStreamHandler(new EventChannel.StreamHandler() {
             @Override

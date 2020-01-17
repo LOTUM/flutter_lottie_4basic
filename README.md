@@ -21,3 +21,6 @@ project/ios/Runner/Info.plist
 <key>io.flutter.embedded_views_preview</key>
 <true />
 ```
+
+## Notes
+This repo is forked from mark922/flutter_lottie and add some basic feature on it

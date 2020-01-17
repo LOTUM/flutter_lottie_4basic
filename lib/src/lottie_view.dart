@@ -45,7 +45,7 @@ class _LottieViewState extends State<LottieView> {
     if (defaultTargetPlatform ==  TargetPlatform.android) {
 
       return AndroidView(
-        viewType: 'convictiontech/flutter_lottie',
+        viewType: 'flutter_lottie_basic',
         creationParams: <String,dynamic> {
           "url": widget.url,
           "filePath" : widget.filePath,
@@ -60,7 +60,7 @@ class _LottieViewState extends State<LottieView> {
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
 
       return UiKitView(
-        viewType: 'convictiontech/flutter_lottie',
+        viewType: 'flutter_lottie_basic',
         creationParams: <String,dynamic> {
           "url": widget.url,
           "filePath" : widget.filePath,

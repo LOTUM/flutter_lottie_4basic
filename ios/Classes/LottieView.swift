@@ -25,11 +25,11 @@ public class LottieView : NSObject, FlutterPlatformView {
    
    func create(args: Any?) {
       
-      let channel : FlutterMethodChannel = FlutterMethodChannel.init(name: "convictiontech/flutter_lottie_" + String(viewId), binaryMessenger: self.registrarInstance.messenger())
+      let channel : FlutterMethodChannel = FlutterMethodChannel.init(name: "flutter_lottie_basic_" + String(viewId), binaryMessenger: self.registrarInstance.messenger())
       let handler : FlutterMethodCallHandler = methodCall;
       channel.setMethodCallHandler(handler)
       
-      let testChannel = FlutterEventChannel(name: "convictiontech/flutter_lottie_stream_playfinish_"  + String(viewId), binaryMessenger: self.registrarInstance.messenger())
+      let testChannel = FlutterEventChannel(name: "flutter_lottie_basic_stream_playfinish_"  + String(viewId), binaryMessenger: self.registrarInstance.messenger())
       self.testStream  = TestStreamHandler()
       testChannel.setStreamHandler(testStream as? FlutterStreamHandler & NSObjectProtocol)
       
