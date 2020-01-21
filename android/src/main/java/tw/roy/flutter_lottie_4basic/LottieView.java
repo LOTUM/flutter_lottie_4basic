@@ -129,7 +129,7 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
 
     @Override
     public View getView() {
-        makeWindowTransparent();
+//        makeWindowTransparent();
         return animationView;
     }
 
