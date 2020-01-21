@@ -3,7 +3,10 @@ package tw.roy.flutter_lottie_4basic;
 import android.animation.Animator;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.View;
+import android.view.ViewParent;
+import android.view.Window;
 import android.widget.ImageView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -16,6 +19,8 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.platform.PlatformView;
+
+import java.lang.reflect.Field;
 import java.util.Map;
 
 public class LottieView implements PlatformView, MethodChannel.MethodCallHandler {
@@ -124,7 +129,34 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
 
     @Override
     public View getView() {
+        makeWindowTransparent();
         return animationView;
+    }
+
+    private void makeWindowTransparent() {
+        animationView.post(() -> {
+            try {
+                ViewParent parent = animationView.getParent();
+
+                if(parent == null) return;
+
+                while(parent.getParent() != null) {
+                    parent = parent.getParent();
+                }
+
+                Object decorView = parent.getClass().getDeclaredMethod("getView").invoke(parent);
+                final Field windowField = decorView.getClass().getDeclaredField("mWindow");
+                windowField.setAccessible(true);
+
+                final Window window = (Window)windowField.get(decorView);
+
+                windowField.setAccessible(false);
+
+                window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            } catch(Exception e) {
+                // log the exception
+            }
+        });
     }
 
     @Override
