@@ -58,7 +58,7 @@ class LottieController {
 
   Future<void> setAnimationSpeed(double speed) async {
     return _channel
-        .invokeMethod('setAnimationSpeed', {"speed": speed.clamp(0, 1)});
+        .invokeMethod('setAnimationSpeed', {"speed": speed});
   }
 
   Future<void> setAnimationProgress(double progress) async {

@@ -9,3 +9,7 @@ upgrade for uploading package to dart.dev
 
 ## 0.3.0
 add image content scale type for ios and android
+
+## 0.8.0
+1. Upgrade Android lottie lib to 3.3.1
+2. Remove Lottie playback speed limit
