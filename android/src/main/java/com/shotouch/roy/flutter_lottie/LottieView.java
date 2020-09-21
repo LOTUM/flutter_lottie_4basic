@@ -4,6 +4,8 @@ import android.animation.Animator;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
+import android.widget.ImageView;
+
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieProperty;
@@ -34,7 +36,7 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
         mArgs = args;
         mRegistrar = registrar;
         animationView = new LottieAnimationView(context);
-        animationView.scaleType(ImageView.ScaleType.CENTER_INSIDE);
+        animationView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         animationView.enableMergePathsForKitKatAndAbove(true);
 
         Map<String, Object> params = (Map<String, Object>) args;
@@ -69,6 +71,10 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
         if (args.get("filePath") != null) {
             String key = mRegistrar.lookupKeyForAsset(args.get("filePath").toString());
             animationView.setAnimation(key);
+        }
+
+        if (args.get("json") != null) {
+            animationView.setAnimationFromJson(args.get("json").toString(), null);
         }
 
         boolean loop, reverse, autoPlay;

@@ -11,7 +11,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   LottieController controller;
   LottieController controller2;
   StreamController<double> newProgressStream;
@@ -33,16 +32,15 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               children: <Widget>[
                 SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: LottieView.fromURL(
-                    url: "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/Watermelon.json",
-                    autoPlay: true,
-                    loop: true,
-                    reverse: true,
-                    onViewCreated: onViewCreated,
-                  )
-                ),
+                    width: 150,
+                    height: 150,
+                    child: LottieView.fromURL(
+                      url: "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/Watermelon.json",
+                      autoPlay: true,
+                      loop: true,
+                      reverse: true,
+                      onViewCreated: onViewCreated,
+                    )),
                 FlatButton(
                   child: Text("Play"),
                   onPressed: () {
@@ -72,7 +70,7 @@ class _MyAppState extends State<MyApp> {
                   child: SizedBox(
                     width: 150,
                     height: 150,
-                    child: LottieView.fromFile(
+                    child: LottieView.fromAsset(
                       filePath: "animations/newAnimation.json",
                       autoPlay: true,
                       loop: true,
@@ -86,16 +84,12 @@ class _MyAppState extends State<MyApp> {
                   onPressed: () {
                     // Set Color of KeyPath
                     this.controller2.setValue(
-                      value: LOTColorValue.fromColor(
-                        color: Color.fromRGBO(0, 0, 255, 1)
-                      ),
-                      keyPath: "body Konturen.Gruppe 1.Fläche 1"
-                    );
+                        value: LOTColorValue.fromColor(color: Color.fromRGBO(0, 0, 255, 1)),
+                        keyPath: "body Konturen.Gruppe 1.Fläche 1");
                     // Set Opacity of KeyPath
-                    this.controller2.setValue(
-                      value: LOTOpacityValue(opacity: 0.1),
-                      keyPath: "body Konturen.Gruppe 1.Fläche 1"
-                    );
+                    this
+                        .controller2
+                        .setValue(value: LOTOpacityValue(opacity: 0.1), keyPath: "body Konturen.Gruppe 1.Fläche 1");
                   },
                 ),
                 Text("Drag anywhere to change animation progress"),

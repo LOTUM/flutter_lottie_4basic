@@ -37,6 +37,7 @@ public class LottieView : NSObject, FlutterPlatformView {
       if let argsDict = args as? Dictionary<String, Any> {
          let url = argsDict["url"] as? String ?? nil;
          let filePath = argsDict["filePath"] as? String ?? nil;
+         let json = argsDict["json"] as? String ?? nil;
          
          if url != nil {
 //            self.animationView = AnimationView(url: URL(string: url!),bundle: "ddd")
@@ -49,6 +50,12 @@ public class LottieView : NSObject, FlutterPlatformView {
             let key = self.registrarInstance.lookupKey(forAsset: filePath!)
             let path = Bundle.main.path(forResource: key, ofType: nil)
             self.animationView = AnimationView(filePath: path!)
+         }
+        
+         if json != nil {
+            let data = Data(json!.utf8)
+            let animation = try? JSONDecoder().decode(Animation.self, from: data)
+            self.animationView = AnimationView(animation: animation)
          }
 
          self.animationView?.contentMode = .scaleAspectFit

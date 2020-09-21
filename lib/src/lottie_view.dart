@@ -8,28 +8,44 @@ typedef void LottieViewCreatedCallback(LottieController controller);
 
 class LottieView extends StatefulWidget {
   LottieView.fromURL({
-    @required this.onViewCreated,
+    this.onViewCreated,
     @required this.url,
     Key key,
-    this.loop = false,
-    this.autoPlay,
-    this.reverse,
-  }) : super(key: key);
+    this.loop = true,
+    this.autoPlay = true,
+    this.reverse = false,
+  })  : filePath = null,
+        json = null,
+        super(key: key);
 
-  LottieView.fromFile({
+  LottieView.fromAsset({
     Key key,
-    @required this.onViewCreated,
+    this.onViewCreated,
     @required this.filePath,
-    this.loop = false,
-    this.autoPlay,
-    this.reverse,
-  }) : super(key: key);
+    this.loop = true,
+    this.autoPlay = true,
+    this.reverse = false,
+  })  : url = null,
+        json = null,
+        super(key: key);
+
+  LottieView.fromJson({
+    Key key,
+    this.onViewCreated,
+    @required this.json,
+    this.loop = true,
+    this.autoPlay = true,
+    this.reverse = false,
+  })  : url = null,
+        filePath = null,
+        super(key: key);
 
   final bool loop;
   final bool autoPlay;
   final bool reverse;
-  String url;
-  String filePath;
+  final String url;
+  final String filePath;
+  final String json;
 
   @override
   _LottieViewState createState() => _LottieViewState();
@@ -46,6 +62,7 @@ class _LottieViewState extends State<LottieView> {
         creationParams: <String, dynamic>{
           "url": widget.url,
           "filePath": widget.filePath,
+          "json": widget.json,
           "loop": widget.loop,
           "reverse": widget.reverse,
           "autoPlay": widget.autoPlay,
@@ -59,6 +76,7 @@ class _LottieViewState extends State<LottieView> {
         creationParams: <String, dynamic>{
           "url": widget.url,
           "filePath": widget.filePath,
+          "json": widget.json,
           "loop": widget.loop,
           "reverse": widget.reverse,
           "autoPlay": widget.autoPlay,
