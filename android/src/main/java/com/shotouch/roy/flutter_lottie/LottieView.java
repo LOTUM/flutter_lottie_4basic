@@ -37,7 +37,6 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
         mRegistrar = registrar;
         animationView = new LottieAnimationView(context);
         animationView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        animationView.enableMergePathsForKitKatAndAbove(true);
 
         Map<String, Object> params = (Map<String, Object>) args;
         create(params);
