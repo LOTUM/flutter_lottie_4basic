@@ -35,7 +35,8 @@ class _MyAppState extends State<MyApp> {
                     width: 150,
                     height: 150,
                     child: LottieView.fromURL(
-                      url: "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/Watermelon.json",
+                      url:
+                          "https://raw.githubusercontent.com/airbnb/lottie-ios/master/Example/Tests/EverythingBagel.json",
                       autoPlay: true,
                       loop: true,
                       reverse: true,
