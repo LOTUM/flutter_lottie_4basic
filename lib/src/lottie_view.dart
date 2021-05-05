@@ -1,16 +1,18 @@
 import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'lottie_controller.dart';
-import 'package:flutter/foundation.dart';
 
 typedef void LottieViewCreatedCallback(LottieController controller);
 
 class LottieView extends StatefulWidget {
   LottieView.fromURL({
     this.onViewCreated,
-    @required this.url,
-    Key key,
+    required this.url,
+    Key? key,
     this.loop = true,
     this.autoPlay = true,
     this.reverse = false,
@@ -19,9 +21,9 @@ class LottieView extends StatefulWidget {
         super(key: key);
 
   LottieView.fromAsset({
-    Key key,
+    Key? key,
     this.onViewCreated,
-    @required this.filePath,
+    required this.filePath,
     this.loop = true,
     this.autoPlay = true,
     this.reverse = false,
@@ -30,9 +32,9 @@ class LottieView extends StatefulWidget {
         super(key: key);
 
   LottieView.fromJson({
-    Key key,
+    Key? key,
     this.onViewCreated,
-    @required this.json,
+    required this.json,
     this.loop = true,
     this.autoPlay = true,
     this.reverse = false,
@@ -43,14 +45,14 @@ class LottieView extends StatefulWidget {
   final bool loop;
   final bool autoPlay;
   final bool reverse;
-  final String url;
-  final String filePath;
-  final String json;
+  final String? url;
+  final String? filePath;
+  final String? json;
 
   @override
   _LottieViewState createState() => _LottieViewState();
 
-  final LottieViewCreatedCallback onViewCreated;
+  final LottieViewCreatedCallback? onViewCreated;
 }
 
 class _LottieViewState extends State<LottieView> {
@@ -93,6 +95,6 @@ class _LottieViewState extends State<LottieView> {
     if (widget.onViewCreated == null) {
       return;
     }
-    widget.onViewCreated(new LottieController(id));
+    widget.onViewCreated!(new LottieController(id));
   }
 }

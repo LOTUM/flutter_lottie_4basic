@@ -202,13 +202,13 @@ public class LottieView : NSObject, FlutterPlatformView {
       case "LOTColorValue":
          let i = UInt32(value.dropFirst(2), radix: 16)
          let color = hexToColor(hex8: i!);
-         self.delegates.append(ColorDelegate(color: color) as! AnyValueProvider)
+         self.delegates.append(ColorDelegate(color: color))
          self.animationView?.setValueProvider(self.delegates[self.delegates.count - 1], keypath: AnimationKeypath(keypath: keyPath + ".Color"))
          break;
       case "LOTOpacityValue":
          if let n = NumberFormatter().number(from: value) {
             let f = CGFloat(truncating: n)
-            self.delegates.append(NumberDelegate(number: f) as! AnyValueProvider)
+            self.delegates.append(NumberDelegate(number: f))
             self.animationView?.setValueProvider(self.delegates[self.delegates.count - 1], keypath: AnimationKeypath(keypath: keyPath + ".Opacity"))
          }
          break;
@@ -216,5 +216,4 @@ public class LottieView : NSObject, FlutterPlatformView {
          break;
       }
    }
-   
 }

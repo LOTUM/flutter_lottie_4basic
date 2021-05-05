@@ -13,9 +13,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  LottieController controller;
-  LottieController controller2;
-  StreamController<double> newProgressStream;
+  LottieController? controller;
+  LottieController? controller2;
+  late StreamController<double> newProgressStream;
 
   _MyAppState() {
     newProgressStream = new StreamController<double>();
@@ -44,28 +44,28 @@ class _MyAppState extends State<MyApp> {
                       reverse: true,
                       onViewCreated: onViewCreated,
                     )),
-                FlatButton(
+                TextButton(
                   child: Text("Play"),
                   onPressed: () {
-                    controller.play();
+                    controller?.play();
                   },
                 ),
-                FlatButton(
+                TextButton(
                   child: Text("Stop"),
                   onPressed: () {
-                    controller.stop();
+                    controller?.stop();
                   },
                 ),
-                FlatButton(
+                TextButton(
                   child: Text("Pause"),
                   onPressed: () {
-                    controller.pause();
+                    controller?.pause();
                   },
                 ),
-                FlatButton(
+                TextButton(
                   child: Text("Resume"),
                   onPressed: () {
-                    controller.resume();
+                    controller?.resume();
                   },
                 ),
                 Text("From File"),
@@ -82,17 +82,19 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                 ),
-                FlatButton(
+                TextButton(
                   child: Text("Change Color"),
                   onPressed: () {
                     // Set Color of KeyPath
-                    this.controller2.setValue(
-                        value: LOTColorValue.fromColor(color: Color.fromRGBO(0, 0, 255, 1)),
-                        keyPath: "body Konturen.Gruppe 1.Fläche 1");
+                    this.controller2?.setValue(
+                          value: LOTColorValue.fromColor(color: Color.fromRGBO(0, 0, 255, 1)),
+                          keyPath: "body Konturen.Gruppe 1.Fläche 1",
+                        );
                     // Set Opacity of KeyPath
-                    this
-                        .controller2
-                        .setValue(value: LOTOpacityValue(opacity: 0.1), keyPath: "body Konturen.Gruppe 1.Fläche 1");
+                    this.controller2?.setValue(
+                          value: LOTOpacityValue(opacity: 0.1),
+                          keyPath: "body Konturen.Gruppe 1.Fläche 1",
+                        );
                   },
                 ),
                 Text("Drag anywhere to change animation progress"),
@@ -108,15 +110,15 @@ class _MyAppState extends State<MyApp> {
     this.controller = controller;
 
     // Listen for when the playback completes
-    this.controller.onPlayFinished.listen((bool animationFinished) {
-      print("Playback complete. Was Animation Finished? " + animationFinished.toString());
+    controller.onPlayFinished.listen((bool animationFinished) {
+      print("Playback complete. Was Animation Finished? $animationFinished");
     });
   }
 
   void onViewCreatedFile(LottieController controller) {
     this.controller2 = controller;
     newProgressStream.stream.listen((double progress) {
-      this.controller2.setAnimationProgress(progress);
+      this.controller2?.setAnimationProgress(progress);
     });
   }
 

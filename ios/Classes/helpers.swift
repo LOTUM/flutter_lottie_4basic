@@ -22,8 +22,22 @@ class ColorDelegate : NSObject { //, LOTColorValueDelegate
    }
    
    func color(forFrame currentFrame: CGFloat, startKeyframe: CGFloat, endKeyframe: CGFloat, interpolatedProgress: CGFloat, start startColor: CGColor!, end endColor: CGColor!, currentColor interpolatedColor: CGColor!) -> Unmanaged<CGColor>! {
-      return  Unmanaged.passRetained(self.color)
+      return Unmanaged.passRetained(self.color)
    }
+}
+
+extension ColorDelegate: AnyValueProvider {
+    var valueType: Any.Type {
+        CGColor.self
+    }
+
+    func hasUpdate(frame: AnimationFrameTime) -> Bool {
+        false
+    }
+
+    func value(frame: AnimationFrameTime) -> Any {
+        color
+    }
 }
 
 class NumberDelegate : NSObject { //, LOTNumberValueDelegate
@@ -36,6 +50,20 @@ class NumberDelegate : NSObject { //, LOTNumberValueDelegate
    func floatValue(forFrame currentFrame: CGFloat, startKeyframe: CGFloat, endKeyframe: CGFloat, interpolatedProgress: CGFloat, startValue: CGFloat, endValue: CGFloat, currentValue interpolatedValue: CGFloat) -> CGFloat {
       return self.n
    }
+}
+
+extension NumberDelegate: AnyValueProvider {
+    var valueType: Any.Type {
+        CGFloat.self
+    }
+
+    func hasUpdate(frame: AnimationFrameTime) -> Bool {
+        false
+    }
+
+    func value(frame: AnimationFrameTime) -> Any {
+        n
+    }
 }
 
 func hexToColor(hex8: UInt32) -> CGColor {

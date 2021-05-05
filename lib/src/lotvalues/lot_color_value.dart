@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+
 import 'lot_value.dart';
 
 class LOTColorValue extends LOTValue {
-  Color _value;
+  late Color _value;
 
-  LOTColorValue.fromHEX({@required String hex}) {
+  LOTColorValue.fromHEX({required String hex}) {
     _value = HexColor(hex);
   }
 
-  LOTColorValue.fromColor({@required Color color}) {
+  LOTColorValue.fromColor({required Color color}) {
     _value = color;
   }
 
