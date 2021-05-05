@@ -20,3 +20,5 @@
 .pub-cache/
 .pub/
 build/
+example/ios/Flutter/Flutter.podspec
+flutter_export_environment.sh
