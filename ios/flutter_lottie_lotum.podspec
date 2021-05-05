@@ -2,7 +2,7 @@
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
 Pod::Spec.new do |s|
-  s.name             = 'roy_flutter_lottie'
+  s.name             = 'flutter_lottie_lotum'
   s.version          = '0.0.1'
   s.summary          = 'Lottie wrapper for flutter'
   s.description      = 'Use Lottie in flutter to create stunning apps with amazing animations.'
@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.dependency 'Flutter'
   s.dependency 'lottie-ios'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 end
 

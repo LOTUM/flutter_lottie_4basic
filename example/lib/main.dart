@@ -1,6 +1,8 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:roy_flutter_lottie/roy_flutter_lottie.dart';
+import 'package:flutter_lottie_lotum/flutter_lottie_lotum.dart';
+
 import 'page_dragger.dart';
 
 void main() => runApp(MyApp());
