@@ -1,6 +1,6 @@
 name: flutter_lottie_lotum
 description: Use lottie in flutter to render animations for iOS and Android
-version: 0.2.9
+version: 0.2.8
 homepage: https://github.com/lotum/flutter_lottie_lotum
 
 environment:
