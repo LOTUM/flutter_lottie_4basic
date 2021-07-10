@@ -1,16 +1,54 @@
 package com.shotouch.roy.flutter_lottie;
 
-import io.flutter.plugin.common.MethodCall;
-import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
+import io.flutter.plugin.common.BinaryMessenger;
+import io.flutter.plugin.platform.PlatformViewRegistry;
 
-/** FlutterLottiePlugin */
-public class FlutterLottiePlugin {
-	/** Plugin registration. */
-	public static void registerWith(Registrar registrar) {
-		registrar.platformViewRegistry().registerViewFactory("shotouch/flutter_lottie",
-				new LottieViewFactory(registrar));
+public class FlutterLottiePlugin implements FlutterPlugin, ActivityAware {
+
+	@Nullable private FlutterPluginBinding pluginBinding;
+
+	public FlutterLottiePlugin() {}
+
+	private void initializePlugin(BinaryMessenger messenger, PlatformViewRegistry viewRegistry) {
+		viewRegistry.registerViewFactory(
+			"shotouch/flutter_lottie",
+			new LottieViewFactory(messenger));
+	}
+
+	@Override
+	public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+		pluginBinding = binding;
+	}
+
+	@Override
+	public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+		// Do nothing
+	}
+
+	@Override
+	public void onAttachedToActivity(ActivityPluginBinding binding) {
+		initializePlugin(
+			pluginBinding.getBinaryMessenger(),
+			pluginBinding.getPlatformViewRegistry());
+	}
+
+	@Override
+	public void onDetachedFromActivityForConfigChanges() {
+		// Do nothing.
+	}
+
+	@Override
+	public void onReattachedToActivityForConfigChanges(ActivityPluginBinding binding) {
+		// Do nothing.
+	}
+
+	@Override
+	public void onDetachedFromActivity() {
+		// Do nothing.
 	}
 }
