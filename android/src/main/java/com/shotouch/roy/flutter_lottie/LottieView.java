@@ -11,10 +11,12 @@ import com.airbnb.lottie.LottieDrawable;
 import com.airbnb.lottie.LottieProperty;
 import com.airbnb.lottie.model.KeyPath;
 import com.airbnb.lottie.value.LottieValueCallback;
+import io.flutter.FlutterInjector;
+import io.flutter.embedding.engine.loader.FlutterLoader;
+import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.platform.PlatformView;
 import java.util.Map;
 
@@ -22,19 +24,19 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
     private final Context mContext;
     private final int mId;
     private final Object mArgs;
-    private final Registrar mRegistrar;
+    private final BinaryMessenger mBinaryMessenger;
     private final LottieAnimationView animationView;
 
     private float maxFrame;
     private MethodChannel channel;
     private EventChannel.EventSink onPlaybackFinishEvent;
 
-    LottieView(Context context, int id, Object args, Registrar registrar) {
+    LottieView(Context context, int id, Object args, BinaryMessenger messenger) {
         super();
         mContext = context;
         mId = id;
         mArgs = args;
-        mRegistrar = registrar;
+        mBinaryMessenger = messenger;
         animationView = new LottieAnimationView(context);
         animationView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
 
@@ -45,10 +47,10 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
 
     void create(Map<String, Object> args) {
 
-        channel = new MethodChannel(mRegistrar.messenger(), "shotouch/flutter_lottie_" + mId);
+        channel = new MethodChannel(mBinaryMessenger, "shotouch/flutter_lottie_" + mId);
         channel.setMethodCallHandler(this);
 
-        final EventChannel onPlaybackCompleteEventChannel = new EventChannel(mRegistrar.messenger(),
+        final EventChannel onPlaybackCompleteEventChannel = new EventChannel(mBinaryMessenger,
                 "shotouch/flutter_lottie_stream_playfinish_" + mId);
 
         onPlaybackCompleteEventChannel.setStreamHandler(new EventChannel.StreamHandler() {
@@ -68,7 +70,8 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
         }
 
         if (args.get("filePath") != null) {
-            String key = mRegistrar.lookupKeyForAsset(args.get("filePath").toString());
+            FlutterLoader loader = FlutterInjector.instance().flutterLoader();
+            String key = loader.getLookupKeyForAsset(args.get("filePath").toString());
             animationView.setAnimation(key);
         }
 
