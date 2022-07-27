@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_lottie_lotum/flutter_lottie_lotum.dart';
+import 'package:flutter_lottie/flutter_lottie.dart';
 
 import 'page_dragger.dart';
 
