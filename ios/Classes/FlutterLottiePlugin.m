@@ -1,5 +1,5 @@
 #import "FlutterLottiePlugin.h"
-#import <flutter_lottie_lotum/flutter_lottie_lotum-Swift.h>
+#import <flutter_lottie/flutter_lottie-Swift.h>
 
 @implementation FlutterLottiePlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
