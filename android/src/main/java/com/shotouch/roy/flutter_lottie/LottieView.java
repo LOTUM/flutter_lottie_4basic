@@ -40,7 +40,6 @@ public class LottieView implements PlatformView, MethodChannel.MethodCallHandler
         mBinaryMessenger = messenger;
         animationView = new LottieAnimationView(context);
         animationView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        animationView.enableMergePathsForKitKatAndAbove(true);
 
         @SuppressWarnings("unchecked")
         Map<String, Object> params = (Map<String, Object>) args;
